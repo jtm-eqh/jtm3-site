@@ -1,0 +1,21 @@
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "https://homes.jtm3properties.com/*"
+  to = "/jtm3-lp/homes.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://land.jtm3properties.com/*"
+  to = "/jtm3-lp/land.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://notes.jtm3properties.com/*"
+  to = "/jtm3-lp/notes.html"
+  status = 200
+  force = true
