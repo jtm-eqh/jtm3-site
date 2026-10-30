@@ -1,241 +1,585 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#2B3595">
-<meta name="description" content="JTM3 Properties is a multi-strategy investment platform investing across single-family residential, land development, and structured credit across the Southeast.">
-<meta property="og:image" content="https://axz5b6rrpi-staging.wpdns.site/wp-content/uploads/2024/02/pngwing-3-1.png">
-<title>JTM3 Properties — Real Estate Investment | Southeast United States</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="JTM3 Properties invests in residential real estate, land and mortgage notes across Texas and the Southeast.">
+<meta name="theme-color" content="#121741">
+<title>JTM3 Properties | Real Estate Investment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/img/Favicon%20browser.png">
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single-page offering-memo structure. Dark survey-plat hero, then numbered sections on a cool paper ground, separated by hairline rules. */
+:root{
+  --paper:#F6F7FB; --surface:#FFFFFF; --ink:#151936; --ink-2:#4A5070; --ink-3:#7A809C;
+  --rule:#DCDFEA; --brand:#2B3595; --brand-soft:#E9EBF7;
+  --band:#121741; --band-2:#1B2160; --on-band:#F2F3FA; --on-band-2:#A9AED6; --plat:#6F79D0;
+  --display:'Poppins',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Poppins',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0D1024; --surface:#141836; --ink:#ECEEF8; --ink-2:#B3B8D6; --ink-3:#8389AD;
+  --rule:#262B52; --brand:#8F99EC; --brand-soft:#1C2150;
+  --band:#080A1C; --band-2:#12163A; --on-band:#F2F3FA; --on-band-2:#9DA3CF; --plat:#5D67C2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D1024; --surface:#141836; --ink:#ECEEF8; --ink-2:#B3B8D6; --ink-3:#8389AD;
+  --rule:#262B52; --brand:#8F99EC; --brand-soft:#1C2150;
+  --band:#080A1C; --band-2:#12163A; --on-band:#F2F3FA; --on-band-2:#9DA3CF; --plat:#5D67C2; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--band);color:var(--on-band);border-bottom:1px solid rgba(255,255,255,.08)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+.mark{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.mark b{font-weight:600;font-size:1.15rem;letter-spacing:.04em}
+.mark span{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--on-band-2)}
+.nav{display:flex;gap:4px;align-items:center}
+.nav a{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-band-2);padding:8px 12px;transition:color .2s}
+.nav a:hover,.nav a.on{color:var(--on-band)}
+.nav a.cta{border:1px solid rgba(255,255,255,.35);color:var(--on-band);margin-left:10px;padding:9px 16px}
+.nav a.cta:hover{background:var(--on-band);color:var(--band)}
+.menu{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:var(--on-band);font:500 .72rem var(--mono);letter-spacing:.12em;padding:8px 12px;cursor:pointer}
+
+/* hero */
+.hero{background:var(--band);color:var(--on-band);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;padding-block:88px 72px}
+.hero .label{color:var(--on-band-2);margin-bottom:28px;display:block}
+.hero h1{font-weight:300;font-size:clamp(2.3rem,5vw,4.1rem);line-height:1.08;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;font-weight:500}
+.hero p{color:var(--on-band-2);max-width:52ch;margin-top:26px;font-size:1.05rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:15px 24px;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn-light{background:var(--on-band);color:var(--band)}
+.btn-light:hover{background:var(--on-band-2)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:var(--on-band)}
+.btn-ghost:hover{border-color:var(--on-band)}
+.btn-brand{background:var(--brand);color:var(--surface)}
+.btn-brand:hover{opacity:.88}
+.plat{width:100%;max-width:560px;justify-self:end;color:var(--plat)}
+.plat text{font-family:var(--mono);fill:var(--on-band-2)}
+
+/* at a glance */
+.glance{background:var(--band-2);color:var(--on-band)}
+.glance .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.glance div.c{padding:28px 24px 30px;border-left:1px solid rgba(255,255,255,.1)}
+.glance div.c:first-child{border-left:0;padding-left:0}
+.glance .label{color:var(--on-band-2);display:block;margin-bottom:10px}
+.glance strong{font-weight:400;font-size:1rem;line-height:1.5;display:block}
+
+/* sections */
+section.s{padding-block:104px;border-top:1px solid var(--rule)}
+section.s.alt{background:var(--surface)}
+.shead{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:48px;margin-bottom:56px}
+.shead .label b{color:var(--brand);font-weight:500;margin-right:10px}
+.shead h2{font-weight:300;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-.015em}
+.shead p{color:var(--ink-2);max-width:62ch;margin-top:18px}
+
+/* firm */
+.firm{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:48px}
+.firm .copy{display:grid;gap:18px;color:var(--ink-2);max-width:66ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:44px;border-top:1px solid var(--rule)}
+.facts div{padding:22px 20px 0 0}
+.facts dt{margin-bottom:6px}
+.facts dd{margin:0;color:var(--ink);font-weight:400}
+
+/* strategies */
+.strat{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:48px;padding-block:52px;border-top:1px solid var(--rule)}
+.strat:first-of-type{border-top:0;padding-top:0}
+.strat h3{font-weight:400;font-size:1.65rem;line-height:1.2;margin-top:10px}
+.strat .lead{color:var(--ink-2);margin-top:14px;font-size:.95rem}
+.strat .go{display:inline-block;margin-top:22px;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);border-bottom:1px solid currentColor;padding-bottom:3px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px}
+.item h4{margin:0 0 8px;font-size:.95rem;font-weight:500;color:var(--ink)}
+.item p{font-size:.88rem;color:var(--ink-2);line-height:1.7}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.tags span{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-2);border:1px solid var(--rule);padding:5px 10px}
+
+/* platform */
+.org{display:grid;gap:0;max-width:880px;margin-inline:auto}
+.node{background:var(--surface);border:1px solid var(--rule);padding:24px 26px}
+.alt .node{background:var(--paper)}
+.node.top{max-width:440px;margin-inline:auto;text-align:center;border-color:var(--brand)}
+.node h3{font-size:1.1rem;font-weight:500}
+.node p{font-size:.87rem;color:var(--ink-2);margin-top:8px}
+.node .label{display:block;margin-bottom:8px}
+.node .lic{font-family:var(--mono);font-size:.72rem;color:var(--brand);margin-top:14px;display:block}
+.stem{height:36px;width:1px;background:var(--rule);margin-inline:auto}
+.kids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;position:relative;padding-top:36px}
+.kids::before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:1px;background:var(--rule)}
+.kids .node{position:relative}
+.kids .node::before{content:"";position:absolute;top:-37px;left:50%;width:1px;height:36px;background:var(--rule)}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:64px;max-width:880px;margin-inline:auto}
+.flow div{border-top:1px solid var(--ink);padding-top:16px}
+.flow h4{margin:0 0 6px;font-size:.92rem;font-weight:500}
+.flow p{font-size:.86rem;color:var(--ink-2)}
+
+/* lifecycle table */
+.tbl{overflow-x:auto;border-top:1px solid var(--ink)}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:.92rem}
+th{font-family:var(--mono);font-weight:500;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:14px 16px 14px 0;border-bottom:1px solid var(--rule)}
+td{padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink)}
+td.ph{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);width:200px}
+td.st{color:var(--ink-3);font-size:.84rem;white-space:nowrap}
+tr.grp td{border-top:1px solid var(--rule)}
+
+/* principles */
+.prin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.prin div{padding:30px 26px 34px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.prin h4{margin:0 0 10px;font-size:1rem;font-weight:500}
+.prin p{font-size:.87rem;color:var(--ink-2)}
+
+/* investor process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:st}
+.steps li{list-style:none;border-top:1px solid var(--ink);padding-top:18px}
+.steps li::before{counter-increment:st;content:"Step " counter(st);font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);display:block;margin-bottom:12px}
+.steps h4{margin:0 0 8px;font-size:1rem;font-weight:500}
+.steps p{font-size:.87rem;color:var(--ink-2)}
+ol.steps{padding:0;margin:0}
+.note{margin-top:44px;padding:22px 24px;background:var(--brand-soft);font-size:.86rem;color:var(--ink-2);max-width:820px}
+
+/* sell */
+.assets{display:grid;border-top:1px solid var(--ink)}
+.asset{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) auto;gap:32px;align-items:center;padding:30px 0;border-bottom:1px solid var(--rule);transition:padding .25s,background .25s}
+.asset:hover{background:var(--brand-soft);padding-inline:20px}
+.asset h3{font-size:1.4rem;font-weight:400}
+.asset p{font-size:.9rem;color:var(--ink-2)}
+.asset .arr{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;color:var(--brand);white-space:nowrap}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:52px}
+.why h4{margin:0 0 6px;font-size:.95rem;font-weight:500}
+.why p{font-size:.87rem;color:var(--ink-2)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px}
+.contact .side p{color:var(--ink-2);margin-top:18px;max-width:46ch}
+.contact .side dl{margin-top:36px;display:grid;gap:20px}
+.contact dd{margin:4px 0 0;color:var(--ink)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form .full{grid-column:1/-1}
+label{display:grid;gap:6px;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+input,select,textarea{font:300 .95rem var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--rule);padding:13px 14px;border-radius:0;width:100%;text-transform:none;letter-spacing:0}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand)}
+form button{justify-self:start;cursor:pointer;border:0;font-family:var(--body)}
+.sent{grid-column:1/-1;font-size:.88rem;color:var(--ink-2);border-left:2px solid var(--brand);padding-left:14px}
+
+/* footer */
+footer{background:var(--band);color:var(--on-band-2);padding-block:64px 40px;font-size:.84rem}
+.ft{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft .mark{color:var(--on-band);margin-bottom:14px}
+.ft h5{margin:0 0 14px;font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-band)}
+.ft ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.ft a:hover{color:var(--on-band)}
+.disc{padding-top:28px;display:grid;gap:12px;font-size:.74rem;line-height:1.7;max-width:980px}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .menu{display:block}
+  .hdr.open .nav{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:68px;left:0;right:0;background:var(--band);padding:12px clamp(16px,4vw,40px) 20px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .hdr.open .nav a.cta{margin:8px 0 0;text-align:center}
+  .hero .wrap{grid-template-columns:1fr;padding-block:64px 48px}
+  .plat{justify-self:start;max-width:440px}
+  .glance .wrap{grid-template-columns:1fr 1fr}
+  .glance div.c:nth-child(3){border-left:0;padding-left:0}
+  .glance div.c{border-top:1px solid rgba(255,255,255,.1)}
+  .glance div.c:nth-child(-n+2){border-top:0}
+  .shead,.firm,.strat,.contact{grid-template-columns:1fr;gap:24px}
+  .grid3,.why{grid-template-columns:1fr 1fr}
+  .prin,.steps{grid-template-columns:1fr 1fr}
+  .kids,.flow{grid-template-columns:1fr}
+  .kids::before,.kids .node::before{display:none}
+  .kids{padding-top:20px}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  section.s{padding-block:72px}
+  .glance .wrap,.grid3,.why,.prin,.steps,.facts,form{grid-template-columns:1fr}
+  .glance div.c{border-left:0!important;padding-left:0}
+  .glance div.c:nth-child(2){border-top:1px solid rgba(255,255,255,.1)}
+  .asset{grid-template-columns:1fr;gap:8px}
+  .ft{grid-template-columns:1fr}
+  .mark span{display:none}
+}
+</style>
 </head>
 <body>
 
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="https://axz5b6rrpi-staging.wpdns.site/wp-content/uploads/2024/02/Logo-JTM3.png" alt="JTM3 Properties"></a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li class="nav-dd"><button class="nav-dd-trigger">Our Investments</button><div class="nav-dropdown"><a href="residential.html">Residential Strategy</a><a href="land.html">Land Strategy</a><a href="note.html">Note Strategy</a><a href="portfolio.html">Portfolio</a></div></li>
-      <li><a href="sell.html">Sell to Us</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta">Contact Us</a>
-    <button class="hamburger" id="hbg" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-  <div class="nav-drawer" id="drawer">
-    <a href="index.html" class="drawer-link">Home</a>
-    <a href="about.html" class="drawer-link">About Us</a>
-    <a href="residential.html" class="drawer-link">Residential Strategy</a>
-    <a href="land.html" class="drawer-link">Land Strategy</a>
-    <a href="note.html" class="drawer-link">Note Strategy</a>
-    <a href="portfolio.html" class="drawer-link">Portfolio</a>
-    <a href="sell.html" class="drawer-link">Sell to Us</a>
-    <a href="contact.html" class="drawer-link drawer-cta">Contact Us</a>
-  </div>
-</nav>
 
-<!-- HERO -->
-<div style="padding-top:var(--nav-h)">
-  <div style="width:100%;height:min(90vh,860px);overflow:hidden;position:relative">
-    <img src="https://axz5b6rrpi-staging.wpdns.site/wp-content/uploads/2024/02/pngwing-3-1.png"
-         alt="JTM3 Properties"
-         style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block">
-    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(43,53,149,.55) 0%,rgba(43,53,149,.35) 50%,rgba(43,53,149,.7) 100%)"></div>
-    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem">
-      <div style="font-size:.54rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.6rem;display:flex;align-items:center;gap:1rem">
-        <span style="display:block;width:20px;height:1px;background:rgba(255,255,255,.4)"></span>
-        Strategic Real Estate Investment &mdash; Southeast United States
-        <span style="display:block;width:20px;height:1px;background:rgba(255,255,255,.4)"></span>
-      </div>
-      <h1 style="font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,5.5vw,5rem);font-weight:300;line-height:1.1;color:#fff;max-width:840px;margin-bottom:1.5rem">
-        Elevating Real Estate Investing<br>Through <em style="font-style:italic;color:rgba(255,255,255,.6)">Creative Solutions</em>
-      </h1>
-      <p style="font-size:.95rem;color:rgba(255,255,255,.65);max-width:560px;line-height:1.85;margin-bottom:2.75rem">
-        Strategic investment in land, residential assets, and mortgage notes across the Southeast.
-      </p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
-        <a href="about.html" class="btn-outline-white">Our Approach</a>
-        <a href="residential.html" class="btn-outline-white">Our Investments</a>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="mark"><b>JTM3</b><span>Properties</span></a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#firm">Firm</a>
+      <a href="#strategies">Strategies</a>
+      <a href="#platform">Platform</a>
+      <a href="#lifecycle">Capabilities</a>
+      <a href="#investors">Investors</a>
+      <a href="#sell">Sell to Us</a>
+      <a href="#contact" class="cta">Investor Inquiries</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="label">Private Real Estate Investment &middot; Austin, Texas</span>
+      <h1>Real estate capital, <em>structured with discipline.</em></h1>
+      <p>JTM3 Properties sponsors and manages investments across single-family residential, land, and residential mortgage notes in Texas and the Southeast, with in-house underwriting and an integrated origination platform.</p>
+      <div class="btns">
+        <a href="#strategies" class="btn btn-light">Our Strategies</a>
+        <a href="#contact" class="btn btn-ghost">Investor Inquiries</a>
       </div>
     </div>
+    <svg class="plat" viewBox="0 0 540 440" fill="none" stroke="currentColor" stroke-width="1" role="img" aria-label="Survey plat drawing of subdivided land parcels">
+      <path d="M40 60 L470 40 L500 300 L330 400 L60 380 Z" stroke-width="1.6"/>
+      <path d="M40 230 C150 215 260 230 330 270 C390 300 440 300 495 280" stroke-dasharray="0" stroke-width="1"/>
+      <path d="M40 252 C150 237 255 252 322 290 C385 322 440 322 497 302" />
+      <path d="M150 52 L156 228 M262 47 L265 236 M370 44 L380 290"/>
+      <path d="M140 246 L130 383 M230 246 L225 389 M318 290 L300 396 M410 314 L420 344"/>
+      <path d="M40 140 L470 120" stroke-dasharray="3 5" opacity=".6"/>
+      <circle cx="40" cy="60" r="3" fill="currentColor"/><circle cx="470" cy="40" r="3" fill="currentColor"/><circle cx="500" cy="300" r="3" fill="currentColor"/><circle cx="330" cy="400" r="3" fill="currentColor"/><circle cx="60" cy="380" r="3" fill="currentColor"/>
+      <g font-size="10" stroke="none">
+        <text x="78" y="105">LOT 1</text><text x="78" y="119">2.01 AC</text>
+        <text x="190" y="100">LOT 2</text><text x="190" y="114">1.94 AC</text>
+        <text x="298" y="96">LOT 3</text><text x="298" y="110">2.12 AC</text>
+        <text x="400" y="100">LOT 4</text><text x="400" y="114">5.03 AC</text>
+        <text x="70" y="315">LOT 5</text><text x="70" y="329">1.88 AC</text>
+        <text x="160" y="320">LOT 6</text><text x="160" y="334">1.91 AC</text>
+        <text x="248" y="330">LOT 7</text><text x="248" y="344">2.05 AC</text>
+        <text x="350" y="340">LOT 8</text><text x="350" y="354">5.00 AC</text>
+        <text x="150" y="30" transform="rotate(-2.7 150 30)">N 87&#176;20'14" E &#160;430.62'</text>
+        <text x="505" y="160" transform="rotate(83.4 505 160)">S 06&#176;35'10" E &#160;261.30'</text>
+        <text x="120" y="408" transform="rotate(4.2 120 408)">S 85&#176;46'02" W &#160;270.84'</text>
+        <text x="168" y="238" transform="rotate(2 168 238)">PROPOSED R.O.W. 60'</text>
+      </g>
+      <g transform="translate(500 62)"><path d="M0 22 L0 -14 M-6 -6 L0 -16 L6 -6"/><text x="-4" y="38" font-size="10" stroke="none">N</text></g>
+    </svg>
   </div>
-</div>
+</section>
 
-<div class="hr"></div>
+<section class="glance" aria-label="Platform at a glance">
+  <div class="wrap">
+    <div class="c"><span class="label">Strategies</span><strong>Residential &middot; Land &middot; Mortgage Notes</strong></div>
+    <div class="c"><span class="label">Operating Companies</span><strong>Equidad Homes &middot; EQH Financial</strong></div>
+    <div class="c"><span class="label">Footprint</span><strong>Texas and the Southeast United States</strong></div>
+    <div class="c"><span class="label">Mandate</span><strong>Origination through disposition</strong></div>
+  </div>
+</section>
 
-<!-- WHAT MAKES US DIFFERENT -->
-<section class="section" style="background:var(--off)">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
-      <div class="eyebrow eyebrow-center">What Makes Us Different</div>
-      <h2 class="display-sm" style="max-width:520px;margin:0 auto">Five Principles. <em>One Standard.</em></h2>
-    </div>
-    <div class="diff-grid reveal">
-      <div class="diff-item">
-        <div class="diff-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div class="diff-title">Expertise</div>
-        <p class="diff-body">Deep knowledge across residential real estate, land development, and structured credit — built from hands-on experience in Southeast markets.</p>
-      </div>
-      <div class="diff-item">
-        <div class="diff-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-        <div class="diff-title">Flexibility</div>
-        <p class="diff-body">Creative capital solutions and owner-financing structures that traditional lenders cannot provide — built around each buyer, seller, and asset.</p>
-      </div>
-      <div class="diff-item">
-        <div class="diff-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div class="diff-title">Speed</div>
-        <p class="diff-body">We move decisively. From site selection through closing, our team executes quickly so opportunities are never missed.</p>
-      </div>
-      <div class="diff-item">
-        <div class="diff-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="diff-title">Discipline</div>
-        <p class="diff-body">Basis-driven underwriting with multiple exits stress-tested at acquisition. Capital preservation is a requirement, not an afterthought.</p>
-      </div>
-      <div class="diff-item">
-        <div class="diff-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div class="diff-title">Passion</div>
-        <p class="diff-body">We believe in homeownership as a wealth-building tool. That belief drives how we source deals, structure terms, and serve our communities.</p>
+<section class="s" id="firm">
+  <div class="wrap">
+    <div class="firm">
+      <div class="label"><b style="color:var(--brand);font-weight:500;margin-right:10px">01</b>The Firm</div>
+      <div>
+        <h2 style="font-weight:300;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-.015em;margin-bottom:28px">A multi-strategy real estate investor built around underwriting, structure, and control of the full lifecycle.</h2>
+        <div class="copy">
+          <p>JTM3 Properties provides customized investment opportunities across single-family homes, residential land, and mortgage notes. The firm sponsors and co-sponsors investments across these asset categories and advises clients through each stage of an investment.</p>
+          <p>Our edge is structure. We acquire at a discounted or structured basis, create or assume underlying debt where terms favor investors, and use owner financing to reach buyers that conventional lenders do not serve. Every position is underwritten with more than one exit and backed by real property collateral.</p>
+        </div>
+        <dl class="facts">
+          <div><dt class="label">Headquarters</dt><dd>Austin, Texas</dd></div>
+          <div><dt class="label">Entity</dt><dd>JTM3 Properties, LLC</dd></div>
+          <div><dt class="label">Investor Profile</dt><dd>Private and institutional capital partners</dd></div>
+        </dl>
       </div>
     </div>
   </div>
 </section>
 
-<div class="hr"></div>
-
-<!-- ABOUT SNAPSHOT -->
-<section class="section">
-  <div class="container-narrow reveal" style="text-align:center">
-    <div class="eyebrow eyebrow-center">About JTM3 Properties</div>
-    <div class="hr-blue" style="margin:0 auto 2rem"></div>
-    <h2 class="display-sm">Providing Value to Our <em>Clients &amp; Investors</em></h2>
-    <p class="body-txt" style="text-align:center;margin-top:1.25rem">At JTM3 Properties, we provide customized investment opportunities across various sectors of the real estate market. Our expertise spans single-family homes, residential land, and mortgage notes — offering a diverse range of high-potential investments across the Southeast.</p>
-    <p class="body-txt" style="text-align:center;margin-top:1rem">As a leading real estate investment and consulting firm, JTM3 Properties excels in sponsoring and co-sponsoring investments across a variety of asset categories, with expert advisory services guiding clients through every stage of their investment journey.</p>
-    <div style="margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="about.html" class="btn-blue">Learn More</a>
-      <a href="contact.html" class="btn-outline">Contact Us</a>
+<section class="s alt" id="strategies">
+  <div class="wrap">
+    <div class="shead">
+      <div class="label"><b>02</b>Investment Strategies</div>
+      <div>
+        <h2>Three complementary strategies on one platform.</h2>
+        <p>Each strategy stands alone and feeds the others. Residential acquisitions create notes, land is sold on owner-financed terms, and the note book generates the cash flow that funds the next acquisition.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- divider photo -->
-  <div style="margin:5rem 0;width:100%;height:min(48vh,440px);overflow:hidden;position:relative" class="reveal">
-    <img src="https://axz5b6rrpi-staging.wpdns.site/wp-content/uploads/2024/02/Group-26.png"
-         alt="JTM3 Properties"
-         style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
-    <div style="position:absolute;inset:0;background:rgba(43,53,149,.2)"></div>
-  </div>
+    <div class="strat">
+      <div>
+        <span class="label">Strategy I</span>
+        <h3>Single-Family Residential</h3>
+        <p class="lead">Acquisition, repositioning, and disposition of workforce and entry-level homes in high-growth markets where homeownership demand outpaces conventional financing.</p>
+        <a href="https://homes.jtm3properties.com" class="go" target="_blank" rel="noopener">Sell a house to JTM3</a>
+      </div>
+      <div>
+        <div class="grid3">
+          <div class="item"><h4>Acquisition</h4><p>Homes bought at a discounted or structured basis through off-market channels, wholesale networks, and motivated seller pipelines.</p></div>
+          <div class="item"><h4>Owner Financing</h4><p>Alternative financing for ITIN holders, self-employed, and credit-challenged buyers who cannot access a conventional loan.</p></div>
+          <div class="item"><h4>Income</h4><p>Financing spreads, monthly cash flow, and interest income on owner-financed positions with an embedded equity cushion.</p></div>
+          <div class="item"><h4>Markets</h4><p>Southeast metros with constrained supply, strong population inflows, and demographic support for workforce housing.</p></div>
+          <div class="item"><h4>Asset Profile</h4><p>Liquid, financeable homes with deep end-buyer demand that hold up across market cycles.</p></div>
+          <div class="item"><h4>Exits</h4><p>Retail sale, note sale, refinance, or long-term hold, each stress-tested at acquisition.</p></div>
+        </div>
+        <div class="tags"><span>Workforce Housing</span><span>Owner Financing</span><span>Basis-Driven</span><span>Cash Flow</span></div>
+      </div>
+    </div>
 
-  <div class="container">
-    <div class="values-row reveal">
-      <div class="val-item">
-        <div class="val-title">Property Acquisition</div>
-        <p class="val-body">Specializing in acquiring undervalued single-family homes, prime residential land, and multifamily properties in emerging Southeast markets.</p>
+    <div class="strat">
+      <div>
+        <span class="label">Strategy II</span>
+        <h3>Land &amp; Development</h3>
+        <p class="lead">Raw, entitled, and semi-improved land in path-of-growth corridors, positioned for residential absorption and builder demand.</p>
+        <a href="https://land.jtm3properties.com" class="go" target="_blank" rel="noopener">Sell land to JTM3</a>
       </div>
-      <div class="val-item">
-        <div class="val-title">Debt Structuring</div>
-        <p class="val-body">Creating and assuming underlying debt, leveraging favorable financing terms to maximize returns and provide access to underserved buyers.</p>
+      <div>
+        <div class="grid3">
+          <div class="item"><h4>Sourcing</h4><p>Parcels in high-growth corridors with a clear path to residential absorption and near-term builder demand.</p></div>
+          <div class="item"><h4>Value Creation</h4><p>Entitlements, platting, infrastructure, and utility extensions that raise per-lot land economics.</p></div>
+          <div class="item"><h4>Subdivision</h4><p>Larger tracts divided into one- to five-acre lots and sold in phases to end users and builders.</p></div>
+          <div class="item"><h4>Owner-Financed Lots</h4><p>Lot sales on owner-financed terms that capture spread while keeping collateral exposure.</p></div>
+          <div class="item"><h4>Land Notes</h4><p>Purchase of newly originated seller-financed land notes from developers, held for cash flow.</p></div>
+          <div class="item"><h4>Disposition</h4><p>Bulk or lot-by-lot sales to homebuilders and developers.</p></div>
+        </div>
+        <div class="tags"><span>Entitlements</span><span>Path-of-Growth</span><span>Subdivision</span><span>Land Notes</span></div>
       </div>
-      <div class="val-item">
-        <div class="val-title">Asset Management</div>
-        <p class="val-body">Hands-on approach ensuring every property in our portfolio is optimized for maximum value, income, and profitability throughout the hold.</p>
+    </div>
+
+    <div class="strat">
+      <div>
+        <span class="label">Strategy III</span>
+        <h3>Credit &amp; Mortgage Notes</h3>
+        <p class="lead">Origination and acquisition of residential and land notes, turning real estate into asset-backed, amortizing cash flow.</p>
+        <a href="https://notes.jtm3properties.com" class="go" target="_blank" rel="noopener">Sell a note to JTM3</a>
+      </div>
+      <div>
+        <div class="grid3">
+          <div class="item"><h4>Origination</h4><p>Seller-finance notes created on our own acquisitions, priced above our cost of capital.</p></div>
+          <div class="item"><h4>Acquisition</h4><p>Performing and non-performing residential notes, bought individually or as portfolios.</p></div>
+          <div class="item"><h4>Yield</h4><p>Amortizing income with rate spread captured between borrowing cost and note yield.</p></div>
+          <div class="item"><h4>Jurisdiction</h4><p>Focus on non-judicial foreclosure states with efficient enforcement and recovery.</p></div>
+          <div class="item"><h4>Diversification</h4><p>Positions spread across geographies, loan-to-values, and borrower profiles.</p></div>
+          <div class="item"><h4>Collateral</h4><p>Every note is secured by real property, with several resolution paths per position.</p></div>
+        </div>
+        <div class="tags"><span>Performing</span><span>Non-Performing</span><span>Asset-Backed</span><span>Amortizing</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="hr"></div>
-
-<!-- INVESTMENT FOCUS CARDS -->
-<section class="section" style="background:var(--blue-pale)">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
-      <div class="eyebrow eyebrow-center">Our Investment Focus</div>
-      <h2 class="display-sm">Three Strategies. <em>One Platform.</em></h2>
+<section class="s" id="platform">
+  <div class="wrap">
+    <div class="shead">
+      <div class="label"><b>03</b>Integrated Platform</div>
+      <div>
+        <h2>One sponsor, two operating companies, one licensed origination arm.</h2>
+        <p>JTM3 owns the capital and the assets. Its operating companies handle the buyer relationship and the licensed lending functions, so each transaction stays inside one platform from sourcing to servicing.</p>
+      </div>
     </div>
-    <div class="strat-cards reveal">
-      <a href="residential.html" class="strat-card">
-        <div class="strat-card-photo">
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&auto=format&fit=crop&q=80" alt="Residential Strategy">
+    <div class="org">
+      <div class="node top">
+        <span class="label">Sponsor</span>
+        <h3>JTM3 Properties, LLC</h3>
+        <p>Capital, acquisitions, underwriting, asset management, and investor relations.</p>
+      </div>
+      <div class="stem"></div>
+      <div class="kids">
+        <div class="node">
+          <span class="label">Operating Company</span>
+          <h3>Equidad Homes</h3>
+          <p>Alternative homeownership platform serving ITIN holders, self-employed, and credit-challenged buyers across 12 Texas markets through owner financing.</p>
         </div>
-        <div class="strat-card-body">
-          <div class="strat-num">Strategy 01</div>
-          <div class="strat-title">Residential Strategy</div>
-          <p class="strat-desc">Acquisition, repositioning, and disposition of single-family assets across affordable and workforce housing segments with creative financing solutions.</p>
-          <div class="strat-link">Learn More</div>
+        <div class="node">
+          <span class="label">Licensed Lender</span>
+          <h3>EQH Financial, LLC</h3>
+          <p>Texas SML mortgage company providing RMLO services and Non-QM origination for the platform's residential transactions.</p>
+          <span class="lic">NMLS #2832795</span>
         </div>
-      </a>
-      <a href="land.html" class="strat-card">
-        <div class="strat-card-photo">
-          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&auto=format&fit=crop&q=80" alt="Land Strategy">
+        <div class="node">
+          <span class="label">Capital Allocation</span>
+          <h3>Note &amp; Land Book</h3>
+          <p>Retained notes and owner-financed land positions that produce recurring, collateral-backed income for investors.</p>
         </div>
-        <div class="strat-card-body">
-          <div class="strat-num">Strategy 02</div>
-          <div class="strat-title">Land Strategy</div>
-          <p class="strat-desc">Acquiring land and lots, entitling for development or resale — either traditionally or through owner-financed notes across the Southeast.</p>
-          <div class="strat-link">Learn More</div>
-        </div>
-      </a>
-      <a href="note.html" class="strat-card">
-        <div class="strat-card-photo">
-          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&auto=format&fit=crop&q=80" alt="Note Strategy">
-        </div>
-        <div class="strat-card-body">
-          <div class="strat-num">Strategy 03</div>
-          <div class="strat-title">Note Strategy</div>
-          <p class="strat-desc">Acquisition of performing and non-performing residential mortgage notes in non-judicial foreclosure states with collateral-backed yield.</p>
-          <div class="strat-link">Learn More</div>
-        </div>
-      </a>
+      </div>
+    </div>
+    <div class="flow">
+      <div><h4>Source</h4><p>JTM3 acquires homes, land, and notes at a disciplined basis.</p></div>
+      <div><h4>Originate</h4><p>Equidad Homes sells to the buyer and EQH Financial handles licensed origination.</p></div>
+      <div><h4>Hold or Sell</h4><p>Resulting notes are held for yield or sold, depending on the exit plan.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="section section-dark">
-  <div class="container-narrow reveal" style="text-align:center">
-    <div class="eyebrow eyebrow-center eyebrow-white">Get in Touch</div>
-    <h2 class="display-sm" style="color:var(--white);margin-bottom:1.25rem">
-      Whether you are an investor, a seller, or a partner — <em style="color:rgba(255,255,255,.5)">we want to hear from you.</em>
-    </h2>
-    <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:2.75rem;line-height:1.85;max-width:520px;margin-left:auto;margin-right:auto">
-      JTM3 Properties works with investors, property sellers, note buyers, and real estate partners across the Southeast United States.
-    </p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="contact.html" class="btn-outline-white">Contact Us</a>
-      <a href="sell.html" class="btn-outline-white">Sell to Us</a>
+<section class="s alt" id="lifecycle">
+  <div class="wrap">
+    <div class="shead">
+      <div class="label"><b>04</b>Full-Cycle Capabilities</div>
+      <div>
+        <h2>We manage every phase of the investment in-house.</h2>
+        <p>From site selection to investor distributions, the same team carries the asset through each stage.</p>
+      </div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Phase</th><th>Capability</th><th>Strategy</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td class="ph">Origination</td><td>Site selection and market analysis</td><td class="st">All strategies</td></tr>
+          <tr><td></td><td>Transaction analysis and underwriting</td><td class="st">All strategies</td></tr>
+          <tr><td></td><td>Investment offer preparation</td><td class="st">All strategies</td></tr>
+          <tr class="grp"><td class="ph">Acquisition</td><td>LLC formation and operations oversight</td><td class="st">All strategies</td></tr>
+          <tr><td></td><td>Buying escrow management</td><td class="st">Residential / Land</td></tr>
+          <tr><td></td><td>Debt acquisition and structuring</td><td class="st">Residential / Notes</td></tr>
+          <tr class="grp"><td class="ph">Development</td><td>Entitlement and permitting</td><td class="st">Land</td></tr>
+          <tr><td></td><td>Platting and construction management</td><td class="st">Land</td></tr>
+          <tr class="grp"><td class="ph">Stabilization</td><td>Property improvement management</td><td class="st">Residential / Land</td></tr>
+          <tr><td></td><td>Asset stabilization</td><td class="st">Residential</td></tr>
+          <tr class="grp"><td class="ph">Management</td><td>Ongoing asset management</td><td class="st">All strategies</td></tr>
+          <tr><td></td><td>Accounting, scheduling, and loan servicing</td><td class="st">All strategies</td></tr>
+          <tr class="grp"><td class="ph">Disposition</td><td>Property sales and marketing</td><td class="st">Residential / Land</td></tr>
+          <tr class="grp"><td class="ph">Investor Relations</td><td>Periodic investor reporting and updates</td><td class="st">All strategies</td></tr>
+          <tr><td></td><td>Timely investor distributions</td><td class="st">All strategies</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
+
+<section class="s" id="principles">
+  <div class="wrap">
+    <div class="shead">
+      <div class="label"><b>05</b>Risk &amp; Underwriting</div>
+      <div>
+        <h2>Capital preservation is a requirement.</h2>
+        <p>Four standards apply to every position, regardless of strategy.</p>
+      </div>
+    </div>
+    <div class="prin">
+      <div><h4>Basis First</h4><p>We buy at a discounted or structured basis so the margin of safety exists on day one.</p></div>
+      <div><h4>Multiple Exits</h4><p>Each deal is underwritten with at least two exits and stress-tested before we commit capital.</p></div>
+      <div><h4>Real Collateral</h4><p>Every note and owner-financed sale is secured by real property with defined enforcement rights.</p></div>
+      <div><h4>Transparent Reporting</h4><p>Investors receive regular reporting on performance, collections, and the status of each asset.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s alt" id="investors">
+  <div class="wrap">
+    <div class="shead">
+      <div class="label"><b>06</b>For Investors</div>
+      <div>
+        <h2>How capital partners invest with JTM3.</h2>
+        <p>We work with private investors, family offices, and institutional partners seeking cash flow backed by real assets.</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><h4>Connect</h4><p>Join our investor network for access to vetted opportunities before they are broadly marketed.</p></li>
+      <li><h4>Review</h4><p>Receive fully underwritten opportunities with basis, business plan, and downside analysis.</p></li>
+      <li><h4>Invest</h4><p>We guide you through subscription and funding on clear terms with aligned interests.</p></li>
+      <li><h4>Report</h4><p>We execute the plan and manage the asset while you receive distributions and ongoing reporting.</p></li>
+    </ol>
+    <p class="note">Investment opportunities are available only to accredited investors and are offered solely through definitive offering documents. Nothing on this site is an offer to sell or a solicitation of an offer to buy any security.</p>
+  </div>
+</section>
+
+<section class="s" id="sell">
+  <div class="wrap">
+    <div class="shead">
+      <div class="label"><b>07</b>Sell to Us</div>
+      <div>
+        <h2>We buy houses, land, and mortgage notes directly.</h2>
+        <p>No commissions, no listings, and no financing contingencies. Choose the asset you own to request an offer.</p>
+      </div>
+    </div>
+    <div class="assets">
+      <a class="asset" href="https://homes.jtm3properties.com" target="_blank" rel="noopener"><h3>Houses</h3><p>Single-family homes in any condition, vacant or occupied, anywhere in our markets.</p><span class="arr">homes.jtm3properties.com &rarr;</span></a>
+      <a class="asset" href="https://land.jtm3properties.com" target="_blank" rel="noopener"><h3>Land</h3><p>Raw land, lots, and entitled parcels, with cash or owner-financed terms available.</p><span class="arr">land.jtm3properties.com &rarr;</span></a>
+      <a class="asset" href="https://notes.jtm3properties.com" target="_blank" rel="noopener"><h3>Notes</h3><p>Performing and non-performing notes, individually or as portfolios. Calculate an offer online.</p><span class="arr">notes.jtm3properties.com &rarr;</span></a>
+    </div>
+    <div class="why">
+      <div><h4>No Commissions</h4><p>A direct sale to JTM3 means no agent fees and more of the proceeds stay with you.</p></div>
+      <div><h4>Any Condition</h4><p>No repairs, cleaning, or preparation. We handle everything after closing.</p></div>
+      <div><h4>Close in 7 to 14 Days</h4><p>Or on your timeline. We respond within 24 hours and make offers within 48 hours of review.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s alt" id="contact">
+  <div class="wrap contact">
+    <div class="side">
+      <div class="label"><b style="color:var(--brand);font-weight:500;margin-right:10px">08</b>Contact</div>
+      <h2 style="font-weight:300;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-.015em;margin-top:18px">Start a conversation.</h2>
+      <p>Investors, sellers, and service partners can reach our team here. We reply within one business day.</p>
+      <dl>
+        <div><dt class="label">Office</dt><dd>Austin, Texas</dd></div>
+        <div><dt class="label">Coverage</dt><dd>Texas and the Southeast United States</dd></div>
+      </dl>
+    </div>
+    <form id="form" novalidate>
+      <label for="f-name">Full name<input id="f-name" name="name" autocomplete="name" required></label>
+      <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label for="f-phone">Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label for="f-type">Inquiry type
+        <select id="f-type" name="type">
+          <option>Investor inquiry</option>
+          <option>Selling a house</option>
+          <option>Selling land</option>
+          <option>Selling a note</option>
+          <option>Partnership</option>
+        </select>
+      </label>
+      <label for="f-msg" class="full">Message<textarea id="f-msg" name="message"></textarea></label>
+      <button type="submit" class="btn btn-brand">Send Inquiry</button>
+      <p class="sent" id="sent" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
 
 <footer>
-  <div class="foot-inner">
-    <div class="foot-top">
+  <div class="wrap">
+    <div class="ft">
       <div>
-        <div class="foot-logo"><img src="https://axz5b6rrpi-staging.wpdns.site/wp-content/uploads/2024/02/logo-footer.png" alt="JTM3 Properties"></div>
-        <p class="foot-desc">A multi-strategy investment platform investing across single-family residential, land development, and structured credit in the Southeast United States.</p>
+        <div class="mark"><b>JTM3</b><span>Properties</span></div>
+        <p>Private real estate investment across residential, land, and mortgage notes. Austin, Texas.</p>
       </div>
-      <div>
-        <div class="foot-col-h">Investments</div>
-        <ul class="foot-links"><li><a href="residential.html">Residential Strategy</a></li><li><a href="land.html">Land Strategy</a></li><li><a href="note.html">Note Strategy</a></li><li><a href="portfolio.html">Portfolio</a></li></ul>
-      </div>
-      <div>
-        <div class="foot-col-h">Company</div>
-        <ul class="foot-links"><li><a href="about.html">About Us</a></li><li><a href="sell.html">Sell to Us</a></li><li><a href="contact.html">Contact Us</a></li></ul>
-      </div>
-      <div>
-        <div class="foot-col-h">Legal</div>
-        <ul class="foot-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul>
-      </div>
+      <div><h5>Strategies</h5><ul><li><a href="#strategies">Residential</a></li><li><a href="#strategies">Land</a></li><li><a href="#strategies">Notes</a></li></ul></div>
+      <div><h5>Firm</h5><ul><li><a href="#firm">Overview</a></li><li><a href="#platform">Platform</a></li><li><a href="#investors">Investors</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Sell to Us</h5><ul><li><a href="https://homes.jtm3properties.com" target="_blank" rel="noopener">Houses</a></li><li><a href="https://land.jtm3properties.com" target="_blank" rel="noopener">Land</a></li><li><a href="https://notes.jtm3properties.com" target="_blank" rel="noopener">Notes</a></li></ul></div>
     </div>
-    <div class="foot-bottom">
-      <p class="foot-copy">Copyright &copy; <span id="yr">2026</span> JTM3 Properties, LLC &mdash; All Rights Reserved.</p>
-      <div class="foot-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+    <div class="disc">
+      <p>This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Any offering will be made only to accredited investors by means of definitive offering documents. Past performance is not indicative of future results. Real estate investments involve risk, including loss of principal.</p>
+      <p>Residential mortgage origination for affiliated transactions is conducted by EQH Financial, LLC, NMLS #2832795, licensed by the Texas Department of Savings and Mortgage Lending. Equal Housing Opportunity.</p>
+      <p>&copy; <span id="yr">2026</span> JTM3 Properties, LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="#top">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#top">Terms of Use</a></p>
     </div>
   </div>
 </footer>
-<script src="main.js"></script>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),btn=document.getElementById('menu');
+  btn.addEventListener('click',function(){var o=hdr.classList.toggle('open');btn.setAttribute('aria-expanded',String(o));btn.textContent=o?'Close':'Menu';});
+  document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){hdr.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';});});
+  var links={};document.querySelectorAll('#nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&links[e.target.id]){Object.values(links).forEach(function(l){l.classList.remove('on')});links[e.target.id].classList.add('on');}});},{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)});
+  }
+  var f=document.getElementById('form'),sent=document.getElementById('sent');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=f.elements.name.value.trim(),m=f.elements.email.value.trim();
+    if(!n||!/^\S+@\S+\.\S+$/.test(m)){sent.textContent='Add your name and a valid email address, then send again.';sent.hidden=false;return;}
+    sent.textContent='Thank you, '+n.split(' ')[0]+'. This preview does not send messages yet. On the live site this form will deliver to the JTM3 team.';
+    sent.hidden=false;f.reset();
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+
 </body>
 </html>

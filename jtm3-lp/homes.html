@@ -1,507 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#2B3595">
-<meta name="description" content="Sell your house fast for cash — JTM3 Properties buys homes in any condition across the Southeast. No agents. No repairs. Close in 14 days.">
-<meta property="og:title" content="We Buy Houses for Cash | JTM3 Properties">
-<meta property="og:description" content="No agents. No repairs. No waiting. Get a cash offer on your home in 24 hours.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
 <title>We Buy Houses for Cash | JTM3 Properties</title>
-<link rel="icon" type="image/png" href="../assets/img/Favicon%20browser.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Sell your house as-is for cash. No repairs, no commissions, no showings. Get a written offer within 24 hours and close in as few as 14 days.">
+<meta name="theme-color" content="#121741">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-decoration:none}
+/* Layout: JTM3 one-pager system (dark band, hairline-ruled sections, mono labels) adapted as a seller landing page: offer form above the fold, then proof, process, comparison, promise, FAQ, final call to action. */
+:root{--band:#121741;--band-2:#1B2160;--accent:#2B3595;--accent-dk:#1E2570;--accent-ink:#2B3595;--hi:#B7BEF0;--on-band-2:#A9AED6;
+--paper:#F7F7F4;--surface:#FFFFFF;--ink:#14171F;--ink-2:#4A4F5C;--ink-3:#6B7080;--line:#DEDDD7;--line-strong:#B9B8B1}
 
-:root{
-  --blue:    #2B3595;
-  --blue-dk: #1e2570;
-  --blue-lt: #eef0fa;
-  --white:   #ffffff;
-  --off:     #f7f6f3;
-  --rule:    #e0ddd8;
-  --txt:     #1a1a1a;
-  --mid:     #4a4a4a;
-  --muted:   #888;
-  --green:   #1a7a3a;
-  --green-lt:#e8f5ed;
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Poppins',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--band)}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:300;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.label{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.label b{color:var(--accent-ink);font-weight:500;margin-right:10px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--band);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+.mark b{font-weight:600;font-size:1.12rem;letter-spacing:.04em}
+.mark span{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--on-band-2)}
+.top .call{display:flex;align-items:center;gap:14px;text-decoration:none}
+.top .call small{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-band-2)}
+.top .call strong{font-weight:500;font-size:1rem;letter-spacing:.02em;border:1px solid rgba(255,255,255,.35);padding:8px 14px}
+.top .call:hover strong{background:#fff;color:var(--band)}
+/* hero */
+.hero{background:var(--band);color:#fff;position:relative;overflow:hidden}
+.hero .art{position:absolute;right:-40px;top:-30px;width:640px;max-width:72%;opacity:.3;color:var(--on-band-2);pointer-events:none}
+.hero .art2{position:absolute;left:-80px;bottom:-60px;width:520px;max-width:60%;opacity:.13;color:var(--on-band-2);pointer-events:none}
+.bg{position:absolute;pointer-events:none;color:var(--accent);opacity:.14;z-index:0}
+.bg svg,.hero .art2 svg,.hero .art svg{width:100%;height:auto;display:block}
+section.s,.cta,.trust{position:relative;overflow:hidden}
+section.s>.wrap,.cta>.wrap,.trust>.wrap{position:relative;z-index:1}
+.bg-r{right:-120px;top:40px;width:560px;max-width:60%}
+.bg-l{left:-140px;bottom:-40px;width:520px;max-width:55%}
+.cta .bg{color:var(--on-band-2);opacity:.22;right:-60px;top:-50px;width:560px;max-width:60%}
+.trust .bg{color:var(--on-band-2);opacity:.14;left:30%;top:-120px;width:700px}
+@media (max-width:960px){.bg{opacity:.06}.hero .art{opacity:.18}.cta .bg{opacity:.14}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start;padding-block:72px 80px}
+.hero .label{color:var(--on-band-2);display:block;margin-bottom:22px}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.7rem);line-height:1.08}
+.hero h1 em{font-style:normal;font-weight:500;color:var(--hi)}
+.hero .sub{color:var(--on-band-2);font-size:1.06rem;max-width:50ch;margin-top:22px}
+.ticks{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:baseline;font-size:.98rem}
+.ticks li::before{content:"";flex:0 0 14px;height:1px;background:var(--hi);transform:translateY(-4px)}
+.hero .callline{margin-top:32px;font-size:.92rem;color:var(--on-band-2)}
+.hero .callline a{color:#fff;font-weight:500;text-decoration:none;border-bottom:1px solid var(--hi)}
+/* form card */
+.card{background:var(--surface);color:var(--ink);padding:30px 28px 26px;border-top:3px solid var(--accent)}
+.card h2{font-size:1.45rem;line-height:1.25;font-weight:400}
+.card .note{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);margin-top:8px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+form .full{grid-column:1/-1}
+label{display:grid;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+input,select,textarea{font:400 .95rem 'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line-strong);border-radius:0;padding:11px 12px;width:100%;letter-spacing:0;text-transform:none;min-width:0}
+textarea{min-height:84px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 .82rem 'Poppins',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:16px 24px;border:0;border-radius:0;cursor:pointer;text-decoration:none;background:var(--accent);color:#fff;transition:background .2s}
+.btn:hover{background:var(--accent-dk)}
+form .btn{grid-column:1/-1;width:100%}
+.fine{grid-column:1/-1;font-size:.74rem;line-height:1.55;color:var(--ink-3)}
+.consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-family:'Poppins',sans-serif;font-size:.76rem;letter-spacing:0;text-transform:none;color:var(--ink-2);line-height:1.5}
+.consent input{width:auto;margin-top:3px;flex:0 0 auto}
+.sent{grid-column:1/-1;font-size:.9rem;color:var(--ink-2);border-left:2px solid var(--accent);padding:4px 0 4px 14px}
+/* trust bar */
+.trust{background:var(--band-2);color:#fff}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.trust div{padding:24px 22px;border-left:1px solid rgba(255,255,255,.12)}
+.trust div:first-child{border-left:0;padding-left:0}
+.trust strong{display:block;font-weight:400;font-size:1.05rem;line-height:1.35}
+.trust small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-band-2);margin-bottom:6px}
+/* sections */
+section.s{padding-block:96px;border-top:1px solid var(--line)}
+section.alt{background:var(--surface)}
+.head{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:44px;margin-bottom:48px}
+.head h2{font-size:clamp(1.8rem,3.3vw,2.6rem);line-height:1.15}
+.head .lead{color:var(--ink-2);max-width:62ch;margin-top:16px;font-size:1.02rem}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px}
+.grid3>div{border-top:1px solid var(--ink);padding-top:18px}
+.grid3 h3{font-size:1.05rem;font-weight:500;margin-bottom:8px}
+.grid3 p{font-size:.92rem;color:var(--ink-2)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;counter-reset:st}
+.steps li{border-top:1px solid var(--ink);padding-top:18px}
+.steps li::before{counter-increment:st;content:"Step " counter(st);font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:12px}
+.steps h3{font-size:1.1rem;font-weight:500;margin-bottom:8px}
+.steps p{font-size:.92rem;color:var(--ink-2)}
+.steps em{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent-ink);display:block;margin-top:12px}
+.tbl{overflow-x:auto;border-top:1px solid var(--ink)}
+table{width:100%;border-collapse:collapse;min-width:600px;font-size:.94rem}
+th{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+th.us{color:var(--accent-ink)}
+td{padding:15px 16px 15px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+td:first-child{color:var(--ink);font-weight:400;width:30%}
+td.us{color:var(--ink);font-weight:500}
+.promise{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.promise div{padding:26px 22px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.promise h3{font-size:1rem;font-weight:500;margin-bottom:8px}
+.promise p{font-size:.9rem;color:var(--ink-2)}
+.faq{border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-size:1.02rem;font-weight:400;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:1.4rem;font-weight:300;color:var(--accent-ink)}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{padding:0 0 22px;color:var(--ink-2);max-width:72ch;font-size:.95rem}
+.cta{background:var(--band);color:#fff;text-align:left}
+.cta .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:center;padding-block:80px}
+.cta h2{font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.12}
+.cta p{color:var(--on-band-2);margin-top:16px;max-width:54ch}
+.cta .acts{display:grid;gap:12px}
+.cta .btn{background:#fff;color:var(--band)}
+.cta .btn:hover{background:var(--hi)}
+.cta .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.cta .btn.ghost:hover{border-color:#fff;background:transparent}
+footer{background:var(--band);color:var(--on-band-2);border-top:1px solid rgba(255,255,255,.1);padding-block:36px calc(36px + env(safe-area-inset-bottom,0px));font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--on-band-2)}
+footer a:hover{color:#fff}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+.mob-call{display:none}
+@media (max-width:960px){
+  .hero .wrap,.head,.cta .wrap{grid-template-columns:1fr;gap:28px}
+  .hero .wrap{padding-block:48px 56px}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust div:nth-child(3){border-left:0;padding-left:0}
+  .trust div{border-top:1px solid rgba(255,255,255,.12)}
+  .trust div:nth-child(-n+2){border-top:0}
+  .grid3,.steps{grid-template-columns:1fr}
+  .promise{grid-template-columns:1fr 1fr}
+  section.s{padding-block:64px}
+  .top .call small{display:none}
 }
-
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--white);
-  color:var(--txt);
-  font-family:'Poppins',sans-serif;
-  font-weight:300;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-
-/* ── STICKY BAR ── */
-.topbar{
-  background:var(--blue);
-  padding:.65rem 1.5rem;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:100;
-}
-.topbar-logo img{height:28px;width:auto}
-.topbar-phone{
-  font-size:.78rem;font-weight:600;color:var(--white);
-  display:flex;align-items:center;gap:.5rem;
-  letter-spacing:.02em;
-}
-.topbar-phone svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:2}
-
-/* ── HERO ── */
-.hero{
-  position:relative;min-height:92vh;
-  display:flex;align-items:center;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background:
-    linear-gradient(105deg, rgba(26,39,68,.92) 0%, rgba(26,39,68,.75) 48%, rgba(26,39,68,.45) 100%),
-    url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&auto=format&fit=crop&q=85') center/cover no-repeat;
-}
-.hero-content{
-  position:relative;z-index:2;
-  width:100%;max-width:1200px;margin:0 auto;
-  padding:4rem 2rem;
-  display:grid;grid-template-columns:1fr 460px;gap:5rem;align-items:center;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
-  color:rgba(255,255,255,.85);font-size:.62rem;font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;
-  padding:.45rem 1rem;border-radius:100px;margin-bottom:1.5rem;
-}
-.hero-badge span{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0}
-.hero h1{
-  font-size:clamp(2.4rem,5vw,4.2rem);
-  font-weight:700;line-height:1.1;color:var(--white);
-  margin-bottom:1.5rem;letter-spacing:-.02em;
-}
-.hero h1 em{font-style:normal;color:#93c5fd}
-.hero-sub{
-  font-size:.95rem;color:rgba(255,255,255,.7);
-  line-height:1.85;max-width:480px;margin-bottom:2.5rem;
-}
-.proof-row{
-  display:flex;flex-wrap:wrap;gap:.75rem;
-}
-.proof-chip{
-  display:flex;align-items:center;gap:.45rem;
-  font-size:.72rem;font-weight:500;color:rgba(255,255,255,.85);
-}
-.proof-chip svg{width:15px;height:15px;stroke:#4ade80;fill:none;stroke-width:2.5;flex-shrink:0}
-
-/* ── FORM CARD ── */
-.form-card{
-  background:var(--white);
-  border-radius:12px;
-  box-shadow:0 24px 80px rgba(0,0,0,.3);
-  overflow:hidden;
-}
-.form-card-head{
-  background:var(--blue);
-  padding:1.5rem 2rem;
-  text-align:center;
-}
-.form-card-title{
-  font-size:1.05rem;font-weight:600;color:var(--white);
-  margin-bottom:.2rem;
-}
-.form-card-sub{
-  font-size:.72rem;color:rgba(255,255,255,.65);
-}
-.form-card-body{padding:2rem;}
-.ffields{display:flex;flex-direction:column;gap:.9rem}
-.ffield{display:flex;flex-direction:column;gap:.32rem}
-.ffield label{
-  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);font-weight:500;
-}
-.ffield input,.ffield select,.ffield textarea{
-  background:var(--off);border:1.5px solid var(--rule);
-  border-radius:8px;color:var(--txt);
-  padding:.78rem 1rem;font-family:'Poppins',sans-serif;
-  font-size:.84rem;font-weight:300;outline:none;
-  transition:border-color .2s,background .2s;width:100%;
-  -webkit-appearance:none;
-}
-.ffield input:focus,.ffield select:focus,.ffield textarea:focus{
-  border-color:var(--blue);background:var(--white);
-}
-.ffield input::placeholder,.ffield textarea::placeholder{color:#ccc}
-.ffield select{
-  cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23aaa'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 1rem center;
-  background-color:var(--off);padding-right:2.5rem;
-}
-.ffield select option{background:var(--white)}
-.ffield textarea{resize:vertical;min-height:80px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.btn-submit{
-  width:100%;padding:1rem;
-  background:var(--blue);color:var(--white);border:none;
-  border-radius:8px;font-family:'Poppins',sans-serif;
-  font-size:.88rem;font-weight:600;letter-spacing:.04em;
-  cursor:pointer;transition:background .25s,transform .2s;
-  box-shadow:0 4px 16px rgba(43,53,149,.4);margin-top:.4rem;
-}
-.btn-submit:hover{background:var(--blue-dk);transform:translateY(-1px)}
-.form-disclaimer{
-  margin-top:.85rem;font-size:.6rem;color:var(--muted);
-  line-height:1.6;text-align:center;
+@media (max-width:560px){
+  form{grid-template-columns:1fr}
+  .promise{grid-template-columns:1fr}
+  .mark span{display:none}
+  .card{padding:24px 18px}
+  .mob-call{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--accent);color:#fff;justify-content:center;align-items:center;gap:10px;padding:14px max(16px,env(safe-area-inset-left,0px)) calc(14px + env(safe-area-inset-bottom,0px));font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.82rem;text-decoration:none}
+  footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 }
 
-/* ── HOW IT WORKS ── */
-.section{padding:5.5rem 0}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem}
-.container-narrow{max-width:760px;margin:0 auto;padding:0 2rem}
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem}
-.step{
-  padding:2.75rem 2.25rem;border-left:1px solid var(--rule);
-  position:relative;
-}
-.step:first-child{border-left:none}
-.step-num{
-  font-size:3.5rem;font-weight:700;color:rgba(43,53,149,.08);
-  line-height:1;margin-bottom:1rem;letter-spacing:-.03em;
-}
-.step-title{font-size:.95rem;font-weight:600;color:var(--txt);margin-bottom:.6rem}
-.step-body{font-size:.8rem;color:var(--mid);line-height:1.78}
-
-/* ── WHY SELL TO JTM3 ── */
-.why-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:1px;background:var(--rule);border:1px solid var(--rule);
-  margin-top:3.5rem;
-}
-.why-item{
-  background:var(--white);padding:2rem 2.25rem;
-  display:flex;gap:1.1rem;align-items:flex-start;
-  transition:background .2s;
-}
-.why-item:hover{background:var(--blue-lt)}
-.why-icon{
-  width:44px;height:44px;border-radius:10px;
-  background:var(--blue-lt);display:flex;align-items:center;
-  justify-content:center;flex-shrink:0;transition:background .2s;
-}
-.why-item:hover .why-icon{background:var(--blue)}
-.why-icon svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:1.8;transition:stroke .2s}
-.why-item:hover .why-icon svg{stroke:var(--white)}
-.why-title{font-size:.84rem;font-weight:600;color:var(--txt);margin-bottom:.3rem}
-.why-body{font-size:.76rem;color:var(--mid);line-height:1.72}
-
-/* ── COMPARISON ── */
-.compare-wrap{
-  overflow-x:auto;margin-top:3.5rem;
-  border:1px solid var(--rule);border-radius:8px;
-}
-.compare-table{width:100%;border-collapse:collapse;min-width:520px}
-.compare-table th{
-  padding:1rem 1.5rem;font-size:.6rem;letter-spacing:.18em;
-  text-transform:uppercase;font-weight:600;text-align:left;
-  border-bottom:1px solid var(--rule);background:var(--off);
-}
-.compare-table th:nth-child(2){background:var(--blue);color:var(--white);text-align:center}
-.compare-table th:nth-child(3){text-align:center;color:var(--muted)}
-.compare-table td{
-  padding:1rem 1.5rem;font-size:.8rem;color:var(--mid);
-  border-bottom:1px solid var(--rule);
-}
-.compare-table tr:last-child td{border-bottom:none}
-.compare-table td:nth-child(2){text-align:center;background:rgba(43,53,149,.03)}
-.compare-table td:nth-child(3){text-align:center;color:#ccc}
-.chk{color:var(--blue);font-size:1.1rem;font-weight:700}
-.xmk{color:#ddd;font-size:1.1rem}
-
-/* ── BOTTOM CTA ── */
-.bottom-cta{
-  background:var(--blue);padding:5rem 0;text-align:center;
-  position:relative;overflow:hidden;
-}
-.bottom-cta::before{
-  content:'';position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&auto=format&fit=crop&q=60') center/cover no-repeat;
-  opacity:.08;
-}
-.bottom-cta-inner{position:relative;z-index:2}
-.bottom-cta h2{
-  font-size:clamp(1.8rem,4vw,3rem);font-weight:600;
-  color:var(--white);margin-bottom:1rem;letter-spacing:-.02em;
-}
-.bottom-cta p{color:rgba(255,255,255,.65);font-size:.9rem;margin-bottom:2.5rem;line-height:1.85}
-.btn-white-solid{
-  display:inline-flex;align-items:center;justify-content:center;
-  background:var(--white);color:var(--blue);
-  padding:.95rem 2.8rem;font-size:.8rem;font-weight:600;
-  letter-spacing:.08em;border:2px solid var(--white);
-  border-radius:8px;transition:all .25s;
-}
-.btn-white-solid:hover{background:transparent;color:var(--white)}
-
-/* ── FOOTER ── */
-.lp-footer{
-  background:#0f1330;padding:2rem;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-}
-.lp-footer-logo img{height:28px;width:auto;opacity:.7}
-.lp-footer-copy{font-size:.62rem;color:rgba(255,255,255,.3)}
-.lp-footer-links{display:flex;gap:1.5rem}
-.lp-footer-links a{font-size:.62rem;color:rgba(255,255,255,.3);transition:color .2s}
-.lp-footer-links a:hover{color:rgba(255,255,255,.65)}
-
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero-content{grid-template-columns:1fr;gap:3rem}
-  .form-card{max-width:520px}
-  .steps{grid-template-columns:1fr}
-  .step{border-left:none;border-top:1px solid var(--rule);padding:2rem 0}
-  .step:first-child{border-top:none}
-  .why-grid{grid-template-columns:1fr}
-}
-@media(max-width:600px){
-  .hero h1{font-size:2.2rem}
-  .frow{grid-template-columns:1fr}
-  .topbar-phone span{display:none}
-}
 </style>
 </head>
 <body>
-
-<!-- STICKY TOP BAR -->
-<div class="topbar">
-  <a href="https://www.jtm3properties.com" class="topbar-logo">
-    <img src="../assets/img/JTM3%20-%20White%20logo%20-%20no%20background%20copy.png" alt="JTM3 Properties">
-  </a>
-  <a href="tel:+18663118120" class="topbar-phone">
-    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span>Call Us:</span> 1-866-311-8120
-  </a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div>
-      <div class="hero-badge"><span></span>Active Buyers — Southeast US</div>
-      <h1>We Buy Houses<br>for <em>Cash.</em><br>Any Condition.</h1>
-      <p class="hero-sub">No agents. No repairs. No contingencies. JTM3 Properties makes a fair cash offer on your home within 24 hours and can close in as few as 14 days — on your timeline.</p>
-      <div class="proof-row">
-        <div class="proof-chip">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          No agent commissions
-        </div>
-        <div class="proof-chip">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          No repairs needed
-        </div>
-        <div class="proof-chip">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          Close in 14 days
-        </div>
-        <div class="proof-chip">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          Cash offer in 24 hours
-        </div>
-        <div class="proof-chip">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          We pay closing costs
-        </div>
-      </div>
-    </div>
-
-    <!-- FORM -->
-    <div class="form-card">
-      <div class="form-card-head">
-        <div class="form-card-title">Get Your Cash Offer</div>
-        <div class="form-card-sub">Free · No obligation · Respond within 24 hours</div>
-      </div>
-      <div class="form-card-body">
-        <div class="ffields">
-          <div class="frow">
-            <div class="ffield"><label>First Name</label><input type="text" placeholder="First" autocomplete="given-name"></div>
-            <div class="ffield"><label>Last Name</label><input type="text" placeholder="Last" autocomplete="family-name"></div>
-          </div>
-          <div class="ffield"><label>Phone Number *</label><input type="tel" placeholder="(555) 000-0000" autocomplete="tel" required></div>
-          <div class="ffield"><label>Email Address</label><input type="email" placeholder="you@example.com" autocomplete="email"></div>
-          <div class="ffield"><label>Property Address *</label><input type="text" placeholder="123 Main St, City, State" required></div>
-          <div class="ffield">
-            <label>Property Condition</label>
-            <select>
-              <option value="" disabled selected>Select condition</option>
-              <option>Move-in ready</option>
-              <option>Needs minor repairs</option>
-              <option>Needs major repairs / renovation</option>
-              <option>Distressed / fire / flood damage</option>
-              <option>Vacant / abandoned</option>
-              <option>Tenant occupied</option>
-            </select>
-          </div>
-          <div class="ffield">
-            <label>Why Are You Selling?</label>
-            <select>
-              <option value="" disabled selected>Select reason</option>
-              <option>Relocating</option>
-              <option>Inherited property</option>
-              <option>Divorce / estate</option>
-              <option>Behind on payments</option>
-              <option>Downsizing</option>
-              <option>Tired landlord</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="ffield"><label>Additional Details</label><textarea placeholder="Anything else we should know about the property?"></textarea></div>
-          <button type="submit" class="btn-submit">Get My Cash Offer →</button>
-          <p class="form-disclaimer">By submitting, you agree to be contacted by JTM3 Properties. We respect your privacy and will never sell your information.</p>
-        </div>
-      </div>
-    </div>
+<header class="top"><div class="wrap">
+  <a class="mark" href="https://jtm3properties.com"><b>JTM3</b><span>Properties</span></a>
+  <a class="call" href="tel:+18663118120"><small>Talk to a buyer now</small><strong>1-866-311-8120</strong></a>
+</div></header>
+<main>
+<section class="hero"><div class="art" aria-hidden="true"><svg viewBox="0 0 600 480" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M40 60 L560 40 L580 440 L60 460 Z" stroke-width="1.8"/><path d="M40 160 L566 140 M300 50 L320 450"/>
+<rect x="110" y="210" width="140" height="120" stroke-width="1.6"/><path d="M110 210 L180 160 L250 210"/><rect x="160" y="280" width="30" height="50"/>
+<rect x="380" y="200" width="130" height="130" stroke-width="1.6"/><path d="M380 200 L445 150 L510 200"/><rect x="420" y="270" width="30" height="60"/>
+<path d="M60 400 L580 380" stroke-dasharray="4 6"/><text x="70" y="425" font-size="12" stroke="none" fill="currentColor" font-family="IBM Plex Mono">LOT 14</text><text x="340" y="415" font-size="12" stroke="none" fill="currentColor" font-family="IBM Plex Mono">LOT 15</text></svg></div><div class="art2" aria-hidden="true"><svg viewBox="0 0 600 380" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M40 340 H560"/><path d="M90 340 V170 L300 60 L510 170 V340" stroke-width="1.8"/><path d="M70 182 L300 50 L530 182"/><rect x="270" y="250" width="60" height="90"/><rect x="140" y="210" width="70" height="60"/><rect x="390" y="210" width="70" height="60"/><path d="M175 210 V270 M140 240 H210 M425 210 V270 M390 240 H460"/><rect x="380" y="78" width="26" height="60"/></svg></div><div class="wrap">
+  <div>
+    <span class="label">Cash home buyers &middot; Texas and the Southeast</span>
+    <h1>Sell your house as-is. <em>Get a cash offer in 24 hours.</em></h1>
+    <p class="sub">Skip the repairs, the showings and the 5 to 6 percent commission. JTM3 Properties buys houses in any condition and closes on the date you choose, in as few as 14 days.</p>
+    <ul class="ticks"><li>Written cash offer within 24 hours, with no obligation</li><li>No repairs, cleaning or showings, ever</li><li>No agent commissions, and we pay standard closing costs</li><li>You choose the closing date</li></ul>
+    <p class="callline">Prefer to talk? Call <a href="tel:+18663118120">1-866-311-8120</a> and speak with our acquisitions team.</p>
   </div>
-</section>
+  <div class="card" id="offer"><h2>Get your cash offer</h2><p class="note">Free &middot; No obligation &middot; Offer within 24 hours</p>
+<form data-lead novalidate>
+<label for="h-first">First name<input id="h-first" name="first_name" autocomplete="given-name" required></label>
+<label for="h-last">Last name<input id="h-last" name="last_name" autocomplete="family-name"></label>
+<label for="h-phone">Phone<input id="h-phone" name="phone" type="tel" autocomplete="tel" required></label>
+<label for="h-email">Email<input id="h-email" name="email" type="email" autocomplete="email"></label>
+<label class="full" for="h-addr">Property address<input id="h-addr" name="address" autocomplete="street-address" required></label>
+<label for="h-cond">Condition<select id="h-cond" name="condition"><option value="" selected disabled>Select condition</option><option>Move-in ready</option><option>Needs minor repairs</option><option>Needs major repairs</option><option>Fire, flood or other damage</option><option>Vacant</option><option>Tenant occupied</option></select></label>
+<label for="h-time">Timeline<select id="h-time" name="timeline"><option value="" selected disabled>When do you want to sell?</option><option>As soon as possible</option><option>Within 30 days</option><option>30 to 90 days</option><option>Just exploring options</option></select></label>
+<label class="full" for="h-why">Reason for selling<select id="h-why" name="reason"><option value="" selected disabled>Select a reason</option><option>Inherited property</option><option>Relocating</option><option>Divorce or separation</option><option>Behind on payments</option><option>Tired landlord</option><option>Downsizing</option><option>Repairs I cannot afford</option><option>Other</option></select></label>
+<label class="consent" for="h-consent"><input type="checkbox" id="h-consent" name="sms_consent">I agree to receive calls and text messages from JTM3 Properties about my inquiry, including automated messages. Consent is not a condition of any purchase. Message and data rates may apply; reply STOP to opt out.</label>
+<button class="btn" type="submit">Get My Cash Offer</button>
+<p class="sent" hidden></p>
+<p class="fine">Your information stays with JTM3 Properties. We never sell or share it.</p>
+</form></div>
+</div></section>
+<section class="trust" aria-label="Why sellers work with us"><div class="bg" aria-hidden="true"><svg viewBox="0 0 600 360" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M30 300 L170 70 L360 40 L560 150 L470 330 Z" stroke-width="1.6"/><circle cx="30" cy="300" r="3.5" fill="currentColor"/><circle cx="170" cy="70" r="3.5" fill="currentColor"/><circle cx="360" cy="40" r="3.5" fill="currentColor"/><circle cx="560" cy="150" r="3.5" fill="currentColor"/><circle cx="470" cy="330" r="3.5" fill="currentColor"/><g font-family='IBM Plex Mono' font-size='11' fill='currentColor' stroke='none'><text x='60' y='170' transform='rotate(-58 60 170)'>N 31&#176;12' E 268.4'</text><text x='230' y='42' transform='rotate(-9 230 42)'>N 81&#176;04' E 192.7'</text><text x='450' y='80' transform='rotate(29 450 80)'>S 61&#176;22' E 227.9'</text><text x='500' y='260' transform='rotate(-63 500 260)'>S 26&#176;48' W 201.3'</text><text x='200' y='335' transform='rotate(4 200 335)'>N 85&#176;50' W 441.6'</text></g></svg></div><div class="wrap"><div><small>Offer</small><strong>Within 24 hours</strong></div><div><small>Closing</small><strong>As few as 14 days</strong></div><div><small>Commissions</small><strong>Zero</strong></div><div><small>Condition</small><strong>Any, as-is</strong></div></div></section>
 
-<!-- HOW IT WORKS -->
-<section class="section" style="background:var(--off)">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div style="font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem;display:flex;align-items:center;justify-content:center;gap:.9rem">
-        <span style="display:block;width:20px;height:1px;background:var(--blue)"></span>How It Works<span style="display:block;width:20px;height:1px;background:var(--blue)"></span>
-      </div>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:600;color:var(--txt);letter-spacing:-.02em;margin-bottom:.6rem">Three Steps to <span style="color:var(--blue)">Your Cash.</span></h2>
-      <p style="font-size:.88rem;color:var(--mid);max-width:480px;margin:0 auto">No lengthy listing process. No open houses. No waiting on bank financing.</p>
-    </div>
-    <div class="steps reveal">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Submit Your Property</div>
-        <p class="step-body">Fill out the form above or call us. Tell us about your home — location, condition, and your timeline. Takes less than 2 minutes.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Receive a Cash Offer</div>
-        <p class="step-body">Our team reviews your property and sends you a no-obligation cash offer within 24 hours. Fair, transparent, and no hidden fees.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">Pick Your Closing Date</div>
-        <p class="step-body">You choose when to close — as fast as 14 days or on your schedule. We handle all paperwork and closing costs. You walk away with cash.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="s" id="situations"><div class="bg bg-r" aria-hidden="true"><svg viewBox="0 0 600 420" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="40" y="40" width="520" height="340" stroke-width="2"/><path d="M40 210 H300 M300 40 V380 M300 250 H560 M430 40 V250"/><path d="M300 150 A40 40 0 0 1 340 190 M300 150 V190 H340" /><path d="M170 210 A36 36 0 0 0 134 246 M170 210 H134 V246"/><path d="M430 140 A30 30 0 0 1 460 170"/><g font-family='IBM Plex Mono' font-size='11' fill='currentColor' stroke='none'><text x='120' y='130'>LIVING  18' x 16'</text><text x='110' y='300'>KITCHEN  14' x 12'</text><text x='330' y='140'>BED 1</text><text x='460' y='140'>BATH</text><text x='380' y='320'>BED 2  12' x 11'</text></g></svg></div><div class="wrap">
+  <div class="head"><div class="label"><b>01</b>Who We Help</div><div><h2>Life does not wait for the perfect market.</h2><p class="lead">Most of the homeowners we buy from are not looking for top dollar on a retail listing. They want certainty, speed and a clean exit. If any of these sound familiar, we can help.</p></div></div>
+  <div class="grid3"><div><h3>Inherited a house</h3><p>Settle the estate without managing repairs, contents or a long listing. We work with heirs and executors.</p></div><div><h3>Behind on payments</h3><p>Selling before a foreclosure is completed can protect your credit and your equity. Time matters, so call early.</p></div><div><h3>Relocating</h3><p>Move on your schedule without carrying two payments while a listing sits on the market.</p></div><div><h3>Divorce or separation</h3><p>A fast, private sale with one offer and one closing makes a hard situation simpler.</p></div><div><h3>Tired landlord</h3><p>Sell with tenants in place. No turnover, no make-ready, no more late-night repair calls.</p></div><div><h3>Major repairs needed</h3><p>Foundation, roof, water or fire damage. We buy the house as it is and handle the work ourselves.</p></div></div>
+</div></section>
 
-<!-- WHY SELL TO JTM3 -->
-<section class="section">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:.5rem">
-      <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;color:var(--txt);letter-spacing:-.02em">Why Sellers Choose <span style="color:var(--blue)">JTM3 Properties</span></h2>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-item">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="why-title">Cash — No Financing Contingency</div><p class="why-body">We buy with our own capital. No bank approvals, no mortgage delays. When we make an offer, we can close.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div><div class="why-title">Any Condition — Zero Repairs</div><p class="why-body">Inherited a property? Water damage? Needs a full renovation? We buy as-is. Don't spend a dollar fixing it up.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div><div class="why-title">Close in 14 Days or Less</div><p class="why-body">Traditional home sales take 60–90 days. We can close in two weeks. Or take more time if you need it — you set the date.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div><div class="why-title">No Agents. Keep More Money.</div><p class="why-body">No 6% commission. No staging costs. No listing fees. Every dollar you save on fees goes directly to you.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 1.2-.504 2.4-1.512 3.408L12 22l-7.488-6.592A4.808 4.808 0 0 1 3 12V5l9-3 9 3v7z"/></svg></div>
-        <div><div class="why-title">Confidential &amp; Hassle-Free</div><p class="why-body">No showings, no open houses, no strangers walking through your home. One conversation, one offer, one closing.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="why-title">We Pay Closing Costs</div><p class="why-body">What we offer is what you receive. We cover all standard closing costs — no surprise deductions at the table.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="s alt" id="process"><div class="bg bg-l" aria-hidden="true"><svg viewBox="0 0 600 380" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M40 340 H560"/><path d="M90 340 V170 L300 60 L510 170 V340" stroke-width="1.8"/><path d="M70 182 L300 50 L530 182"/><rect x="270" y="250" width="60" height="90"/><rect x="140" y="210" width="70" height="60"/><rect x="390" y="210" width="70" height="60"/><path d="M175 210 V270 M140 240 H210 M425 210 V270 M390 240 H460"/><rect x="380" y="78" width="26" height="60"/></svg></div><div class="wrap">
+  <div class="head"><div class="label"><b>02</b>How It Works</div><div><h2>Three steps from first call to cash at closing.</h2><p class="lead">No listing, no open houses and no waiting on a buyer&rsquo;s bank approval.</p></div></div>
+  <ol class="steps"><li><h3>Tell us about the house</h3><p>Fill out the form or call. Share the address, condition and your timeline. It takes about two minutes.</p><em>About 2 minutes</em></li><li><h3>Get your written offer</h3><p>We review the property and recent sales nearby, then send a no-obligation cash offer and explain how we arrived at it.</p><em>Within 24 hours</em></li><li><h3>Close on your date</h3><p>Choose the closing date. A title company handles the paperwork, we pay standard closing costs, and you are paid at closing.</p><em>As few as 14 days</em></li></ol>
+  
+</div></section>
 
-<!-- COMPARISON TABLE -->
-<section class="section" style="background:var(--off)">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:.5rem">
-      <h2 style="font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:600;color:var(--txt);letter-spacing:-.02em">JTM3 vs. Listing with an Agent</h2>
-    </div>
-    <div class="compare-wrap reveal">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>JTM3 Properties</th>
-            <th>Traditional Agent</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Offer timeline</td><td><strong class="chk">24 hours</strong></td><td class="xmk">Days to weeks</td></tr>
-          <tr><td>Closing timeline</td><td><strong class="chk">14 days</strong></td><td class="xmk">60–90 days avg</td></tr>
-          <tr><td>Agent commissions</td><td><strong class="chk">None</strong></td><td class="xmk">5–6% of sale price</td></tr>
-          <tr><td>Repairs required</td><td><strong class="chk">None — as-is</strong></td><td class="xmk">Often required</td></tr>
-          <tr><td>Showings &amp; open houses</td><td><strong class="chk">None</strong></td><td class="xmk">Multiple</td></tr>
-          <tr><td>Financing contingency</td><td><strong class="chk">No — cash purchase</strong></td><td class="xmk">Yes — buyer financing required</td></tr>
-          <tr><td>Closing costs</td><td><strong class="chk">We pay</strong></td><td class="xmk">Seller typically pays</td></tr>
-          <tr><td>Certainty of close</td><td><strong class="chk">High</strong></td><td class="xmk">Deals fall through often</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+<section class="s" id="compare"><div class="wrap">
+  <div class="head"><div class="label"><b>03</b>The Comparison</div><div><h2>Selling to us versus listing with an agent.</h2><p class="lead">A listing can bring a higher headline price. Here is what it usually costs to get there.</p></div></div>
+  <div class="tbl"><table><thead><tr><th></th><th class="us">JTM3 Properties</th><th>Listing with an agent</th></tr></thead><tbody><tr><td>Time to an offer</td><td class="us">24 hours</td><td>Weeks to months on market</td></tr><tr><td>Time to close</td><td class="us">As few as 14 days</td><td>30 to 60 days after an accepted offer</td></tr><tr><td>Commissions</td><td class="us">None</td><td>Typically 5 to 6 percent</td></tr><tr><td>Repairs and cleaning</td><td class="us">None, sold as-is</td><td>Often expected or negotiated</td></tr><tr><td>Showings and open houses</td><td class="us">None</td><td>Many</td></tr><tr><td>Buyer financing risk</td><td class="us">None, cash purchase</td><td>Deals can fail at appraisal or underwriting</td></tr><tr><td>Closing costs</td><td class="us">We pay standard costs</td><td>Seller usually pays a share</td></tr></tbody></table></div>
+</div></section>
 
-<!-- BOTTOM CTA -->
-<div class="bottom-cta">
-  <div class="container bottom-cta-inner">
-    <h2>Ready to Get Your Cash Offer?</h2>
-    <p>Fill out the form above or call us now. We respond within 24 hours — no obligation, no pressure.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="tel:+18663118120" class="btn-white-solid">Call 1-866-311-8120</a>
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" class="btn-white-solid" style="background:transparent;color:var(--white)">Get Online Offer →</a>
-    </div>
-  </div>
-</div>
+<section class="s alt" id="promise"><div class="bg bg-r" aria-hidden="true"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="100" cy="100" r="80"/><circle cx="100" cy="100" r="62" stroke-dasharray="2 5"/><path d="M100 14 L112 100 L100 186 L88 100 Z"/><path d="M14 100 H186"/><g font-family='IBM Plex Mono' font-size='11' fill='currentColor' stroke='none'><text x='96' y='10'>N</text></g></svg></div><div class="wrap">
+  <div class="head"><div class="label"><b>04</b>Our Commitment</div><div><h2>What you can count on from us.</h2><p class="lead">We want you to feel sure about your decision, whether or not you sell to us.</p></div></div>
+  <div class="promise"><div><h3>A written offer</h3><p>Every offer is in writing, with the reasoning behind the number.</p></div><div><h3>No fees</h3><p>No commissions, no service fees and no charges to receive an offer.</p></div><div><h3>No pressure</h3><p>Take the time you need. If our offer is not right for you, there is no obligation.</p></div><div><h3>Straight answers</h3><p>If we are not the right fit, we will tell you and point you to a better option.</p></div></div>
+</div></section>
 
-<!-- FOOTER -->
-<div class="lp-footer">
-  <div class="lp-footer-logo">
-    <img src="https://axz5b6rrpi-staging.wpdns.site/wp-content/uploads/2024/02/logo-footer.png" alt="JTM3 Properties">
-  </div>
-  <p class="lp-footer-copy">© 2026 JTM3 Properties, LLC — All Rights Reserved.</p>
-  <div class="lp-footer-links">
-    <a href="https://www.jtm3properties.com">Main Site</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms</a>
-  </div>
-</div>
+<section class="s" id="faq"><div class="bg bg-l" aria-hidden="true"><svg viewBox="0 0 600 420" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="40" y="40" width="520" height="340" stroke-width="2"/><path d="M40 210 H300 M300 40 V380 M300 250 H560 M430 40 V250"/><path d="M300 150 A40 40 0 0 1 340 190 M300 150 V190 H340" /><path d="M170 210 A36 36 0 0 0 134 246 M170 210 H134 V246"/><path d="M430 140 A30 30 0 0 1 460 170"/><g font-family='IBM Plex Mono' font-size='11' fill='currentColor' stroke='none'><text x='120' y='130'>LIVING  18' x 16'</text><text x='110' y='300'>KITCHEN  14' x 12'</text><text x='330' y='140'>BED 1</text><text x='460' y='140'>BATH</text><text x='380' y='320'>BED 2  12' x 11'</text></g></svg></div><div class="wrap">
+  <div class="head"><div class="label"><b>05</b>Questions</div><div><h2>Common questions from homeowners.</h2></div></div>
+  <div class="faq"><details><summary>How do you decide on the offer?</summary><p>We look at the condition of the house, the cost of repairs and recent sales of similar homes nearby. Our offer reflects a fast, as-is cash purchase with no commissions or repairs on your side, and we explain the numbers when we send it.</p></details><details><summary>Are there any fees or commissions?</summary><p>No. You pay no commissions and no fees to work with us, and we pay standard closing costs.</p></details><details><summary>Do I need to make repairs or clean out the house?</summary><p>No. Sell it as it is. Leave behind anything you do not want and we will take care of it.</p></details><details><summary>How fast can you close?</summary><p>In as few as 14 days, once title is clear. If you need more time, you choose a later date.</p></details><details><summary>What if I am behind on payments or facing foreclosure?</summary><p>Contact us as soon as possible. Selling before a foreclosure is completed may help you keep equity and protect your credit, and the earlier we talk, the more options you have.</p></details><details><summary>Am I obligated if I request an offer?</summary><p>No. Requesting an offer is free and does not commit you to anything.</p></details></div>
+</div></section>
 
+<section class="cta"><div class="bg" aria-hidden="true"><svg viewBox="0 0 600 380" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M40 340 H560"/><path d="M90 340 V170 L300 60 L510 170 V340" stroke-width="1.8"/><path d="M70 182 L300 50 L530 182"/><rect x="270" y="250" width="60" height="90"/><rect x="140" y="210" width="70" height="60"/><rect x="390" y="210" width="70" height="60"/><path d="M175 210 V270 M140 240 H210 M425 210 V270 M390 240 H460"/><rect x="380" y="78" width="26" height="60"/></svg></div><div class="wrap">
+  <div><h2>Find out what your house is worth to a cash buyer today.</h2><p>It takes two minutes to request your offer, and you will hear from us within one business day.</p></div>
+  <div class="acts"><a class="btn" href="#offer">Get My Cash Offer</a><a class="btn ghost" href="tel:+18663118120">Call 1-866-311-8120</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <span>&copy; <span id="yr">2026</span> JTM3 Properties, LLC. All rights reserved. Austin, Texas.</span>
+  <nav><a href="https://jtm3properties.com">Main Site</a><a href="https://homes.jtm3properties.com">Sell a House</a><a href="https://land.jtm3properties.com">Sell Land</a><a href="https://notes.jtm3properties.com">Sell a Note</a><a href="https://jtm3properties.com/privacy">Privacy Policy</a></nav>
+</div></footer>
+<a class="mob-call" href="tel:+18663118120">Call 1-866-311-8120</a>
 <script>
 (function(){
-  var obs=new IntersectionObserver(function(e){e.forEach(function(n){if(n.isIntersecting){n.target.classList.add('in');obs.unobserve(n.target)}})},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+document.querySelectorAll('form[data-lead]').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var msg=f.querySelector('.sent');var bad=[];
+    f.querySelectorAll('[required]').forEach(function(el){
+      var ok=el.type==='checkbox'?el.checked:el.value.trim()!=='';
+      if(el.type==='email'&&el.value&&!/^\S+@\S+\.\S+$/.test(el.value))ok=false;
+      el.setAttribute('aria-invalid',ok?'false':'true');if(!ok)bad.push(el);
+    });
+    if(bad.length){msg.textContent='Please complete the highlighted fields so we can prepare your offer.';msg.hidden=false;bad[0].focus();return;}
+    var first=(f.querySelector('[name=first_name]')||{}).value||'';
+    msg.textContent='Thank you'+(first?', '+first.trim():'')+'. Your information was received. A member of our acquisitions team will contact you within one business day.';
+    msg.hidden=false;f.reset();
+  });
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+
 })();
 </script>
 </body>

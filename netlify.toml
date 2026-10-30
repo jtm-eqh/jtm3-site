@@ -2,6 +2,7 @@
   publish = "."
   command = ""
 
+# Seller landing pages served on their own subdomains
 [[redirects]]
   from = "https://homes.jtm3properties.com/*"
   to = "/jtm3-lp/homes.html"
@@ -19,3 +20,47 @@
   to = "/jtm3-lp/notes.html"
   status = 200
   force = true
+
+# Old multi-page URLs now point to sections of the one-page site
+[[redirects]]
+  from = "/about.html"
+  to = "/#firm"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/residential.html"
+  to = "/#strategies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/land.html"
+  to = "/#strategies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/note.html"
+  to = "/#strategies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/#platform"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sell.html"
+  to = "/#sell"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/#contact"
+  status = 301
+  force = true
+
